@@ -1,0 +1,304 @@
+/* Custom Variables */
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    --danger-gradient: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);
+    --warning-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.bg-gradient-custom {
+    background: var(--primary-gradient);
+}
+
+.gradient-text {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hero Section */
+.hero-section {
+    animation: fadeInDown 0.8s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Upload Card */
+.upload-card {
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    animation: fadeInUp 1s ease;
+}
+
+.upload-card:hover {
+    transform: translateY(-5px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Upload Area */
+.upload-area {
+    border: 3px dashed #667eea;
+    border-radius: 15px;
+    padding: 50px 20px;
+    text-align: center;
+    background: #f8f9ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+    background: #e8ebff;
+    border-color: #764ba2;
+}
+
+.upload-area.drag-over {
+    background: #d0d8ff;
+    border-color: #764ba2;
+    transform: scale(1.02);
+}
+
+/* Stat Cards */
+.stat-card {
+    padding: 25px;
+    border-radius: 15px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card.high-risk {
+    border-left: 5px solid #dc3545;
+}
+
+.stat-card.medium-risk {
+    border-left: 5px solid #ffc107;
+}
+
+.stat-card.low-risk {
+    border-left: 5px solid #17a2b8;
+}
+
+.stat-card.info {
+    border-left: 5px solid #28a745;
+}
+
+.stat-card h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.stat-card p {
+    margin: 0;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* Vulnerability Cards */
+.vulnerability-card {
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: none;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.vulnerability-card:hover {
+    transform: translateX(5px);
+}
+
+.vulnerability-card.high {
+    border-left: 6px solid #dc3545;
+    background: linear-gradient(to right, #fff5f5 0%, #ffffff 100%);
+}
+
+.vulnerability-card.medium {
+    border-left: 6px solid #ffc107;
+    background: linear-gradient(to right, #fffbf0 0%, #ffffff 100%);
+}
+
+.vulnerability-card.low {
+    border-left: 6px solid #17a2b8;
+    background: linear-gradient(to right, #f0f9fb 0%, #ffffff 100%);
+}
+
+.risk-badge {
+    font-size: 0.85rem;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.risk-badge.high {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+}
+
+.risk-badge.medium {
+    background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+    color: #000;
+}
+
+.risk-badge.low {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    color: white;
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--primary-gradient);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-success {
+    background: var(--success-gradient);
+    border: none;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
+}
+
+/* Loading Animation */
+#loadingSection {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.progress {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Results Section */
+#resultsSection {
+    animation: fadeInScale 0.6s ease;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stat-card {
+        margin: 10px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .upload-area {
+        padding: 30px 15px;
+    }
+}
+
+/* Utility Classes */
+.shadow-lg {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Code Block Styling */
+.code-block {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    overflow-x: auto;
+}
+
+/* Tooltip Styling */
+.tooltip-custom {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-custom:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+}
